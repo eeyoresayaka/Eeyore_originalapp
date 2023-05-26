@@ -16,6 +16,8 @@
 		D20A9D182A1A0D7D0008195B /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = D20A9D172A1A0D7D0008195B /* Realm */; };
 		D20A9D1A2A1A0D7D0008195B /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D20A9D192A1A0D7D0008195B /* RealmSwift */; };
 		D20A9D1C2A1A11FA0008195B /* diary.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20A9D1B2A1A11FA0008195B /* diary.swift */; };
+		D20A9D1F2A1DCE130008195B /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = D20A9D1E2A1DCE130008195B /* FSCalendar */; };
+		D20A9D232A1DD0980008195B /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20A9D222A1DD0980008195B /* CalendarViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,7 @@
 		D20A9D0E2A19F2C50008195B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D20A9D102A19F2C50008195B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D20A9D1B2A1A11FA0008195B /* diary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = diary.swift; sourceTree = "<group>"; };
+		D20A9D222A1DD0980008195B /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +39,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D20A9D1A2A1A0D7D0008195B /* RealmSwift in Frameworks */,
+				D20A9D1F2A1DCE130008195B /* FSCalendar in Frameworks */,
 				D20A9D182A1A0D7D0008195B /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -70,6 +74,7 @@
 				D20A9D0D2A19F2C50008195B /* LaunchScreen.storyboard */,
 				D20A9D102A19F2C50008195B /* Info.plist */,
 				D20A9D1B2A1A11FA0008195B /* diary.swift */,
+				D20A9D222A1DD0980008195B /* CalendarViewController.swift */,
 			);
 			path = Eeyore_originalapp;
 			sourceTree = "<group>";
@@ -93,6 +98,7 @@
 			packageProductDependencies = (
 				D20A9D172A1A0D7D0008195B /* Realm */,
 				D20A9D192A1A0D7D0008195B /* RealmSwift */,
+				D20A9D1E2A1DCE130008195B /* FSCalendar */,
 			);
 			productName = Eeyore_originalapp;
 			productReference = D20A9CFF2A19F2C30008195B /* Eeyore_originalapp.app */;
@@ -124,6 +130,7 @@
 			mainGroup = D20A9CF62A19F2C30008195B;
 			packageReferences = (
 				D20A9D162A1A0D7D0008195B /* XCRemoteSwiftPackageReference "realm-swift" */,
+				D20A9D1D2A1DCE130008195B /* XCRemoteSwiftPackageReference "FSCalendar" */,
 			);
 			productRefGroup = D20A9D002A19F2C30008195B /* Products */;
 			projectDirPath = "";
@@ -152,6 +159,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D20A9D232A1DD0980008195B /* CalendarViewController.swift in Sources */,
 				D20A9D072A19F2C30008195B /* ViewController.swift in Sources */,
 				D20A9D032A19F2C30008195B /* AppDelegate.swift in Sources */,
 				D20A9D052A19F2C30008195B /* SceneDelegate.swift in Sources */,
@@ -381,6 +389,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		D20A9D1D2A1DCE130008195B /* XCRemoteSwiftPackageReference "FSCalendar" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/WenchaoD/FSCalendar.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -393,6 +409,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = D20A9D162A1A0D7D0008195B /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;
+		};
+		D20A9D1E2A1DCE130008195B /* FSCalendar */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D20A9D1D2A1DCE130008195B /* XCRemoteSwiftPackageReference "FSCalendar" */;
+			productName = FSCalendar;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -8,12 +8,26 @@
 import Foundation
 import UIKit
 import FSCalendar
+import RealmSwift
 
-class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource{
-
-
+class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource, UITableViewDelegate , UITableViewDataSource {
+    
     var label:UILabel!
     let df = DateFormatter()
+    let resultTitle = realm.objects(Diary.self).value(forKey: "title")
+    let resultArticle = realm.objects(Diary.self).value(forKey: "article")
+    
+    var array = ["a", "b", "c"]
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return array.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier:  "cell", for: indexPath)
+        cell.textLabel!.text = array[indexPath.row]
+        return cell
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +46,7 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
         calendar.appearance.titleFont            = UIFont.systemFont(ofSize: 17)
         label = UILabel(frame: CGRect(x: 25, y: 285, width: 320, height: 300))
         view.addSubview(label)
+        
     }
     
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {

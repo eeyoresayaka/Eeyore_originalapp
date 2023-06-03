@@ -8,7 +8,7 @@
 import UIKit
 import RealmSwift
 
-    let realm = try! Realm()
+let realm = try! Realm()
 
 class ViewController: UIViewController , UITextFieldDelegate {
     

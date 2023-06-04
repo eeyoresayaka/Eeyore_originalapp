@@ -18,6 +18,9 @@
 		D20A9D1C2A1A11FA0008195B /* diary.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20A9D1B2A1A11FA0008195B /* diary.swift */; };
 		D20A9D1F2A1DCE130008195B /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = D20A9D1E2A1DCE130008195B /* FSCalendar */; };
 		D20A9D232A1DD0980008195B /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20A9D222A1DD0980008195B /* CalendarViewController.swift */; };
+		D20A9D282A2C264F0008195B /* CalendarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20A9D262A2C264E0008195B /* CalendarTableViewCell.swift */; };
+		D20A9D292A2C264F0008195B /* CalendarTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D20A9D272A2C264F0008195B /* CalendarTableViewCell.xib */; };
+		D20A9D2B2A2C7FBC0008195B /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20A9D2A2A2C7FBC0008195B /* ArticleViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +34,9 @@
 		D20A9D102A19F2C50008195B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D20A9D1B2A1A11FA0008195B /* diary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = diary.swift; sourceTree = "<group>"; };
 		D20A9D222A1DD0980008195B /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		D20A9D262A2C264E0008195B /* CalendarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarTableViewCell.swift; sourceTree = "<group>"; };
+		D20A9D272A2C264F0008195B /* CalendarTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarTableViewCell.xib; sourceTree = "<group>"; };
+		D20A9D2A2A2C7FBC0008195B /* ArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +81,9 @@
 				D20A9D102A19F2C50008195B /* Info.plist */,
 				D20A9D1B2A1A11FA0008195B /* diary.swift */,
 				D20A9D222A1DD0980008195B /* CalendarViewController.swift */,
+				D20A9D262A2C264E0008195B /* CalendarTableViewCell.swift */,
+				D20A9D272A2C264F0008195B /* CalendarTableViewCell.xib */,
+				D20A9D2A2A2C7FBC0008195B /* ArticleViewController.swift */,
 			);
 			path = Eeyore_originalapp;
 			sourceTree = "<group>";
@@ -149,6 +158,7 @@
 				D20A9D0F2A19F2C50008195B /* LaunchScreen.storyboard in Resources */,
 				D20A9D0C2A19F2C50008195B /* Assets.xcassets in Resources */,
 				D20A9D0A2A19F2C30008195B /* Main.storyboard in Resources */,
+				D20A9D292A2C264F0008195B /* CalendarTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -161,9 +171,11 @@
 			files = (
 				D20A9D232A1DD0980008195B /* CalendarViewController.swift in Sources */,
 				D20A9D072A19F2C30008195B /* ViewController.swift in Sources */,
+				D20A9D2B2A2C7FBC0008195B /* ArticleViewController.swift in Sources */,
 				D20A9D032A19F2C30008195B /* AppDelegate.swift in Sources */,
 				D20A9D052A19F2C30008195B /* SceneDelegate.swift in Sources */,
 				D20A9D1C2A1A11FA0008195B /* diary.swift in Sources */,
+				D20A9D282A2C264F0008195B /* CalendarTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

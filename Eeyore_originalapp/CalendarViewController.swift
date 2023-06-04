@@ -11,7 +11,8 @@ import FSCalendar
 import RealmSwift
 
 class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource, UITableViewDelegate , UITableViewDataSource {
-    
+        
+    @IBOutlet weak var tableView: CalendarTableViewCell!
     var label:UILabel!
     let df = DateFormatter()
     let resultTitle = realm.objects(Diary.self).value(forKey: "title")
@@ -31,6 +32,9 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.delegate = self
+
+        
         let calendar = FSCalendar(frame: CGRect(x: 25, y: 110, width: 350, height: 300))
         calendar.dataSource = self
         calendar.delegate = self
@@ -38,12 +42,12 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
 //        calendar.appearance.weekdayTextColor = UIColor.systemPink
         calendar.appearance.weekdayTextColor = .darkGray //曜日表示のテキストカラー
         calendar.appearance.titleWeekendColor = .systemPink
-        calendar.appearance.headerTitleColor = UIColor.systemPink
+        calendar.appearance.headerTitleColor = UIColor.darkGray
         calendar.appearance.headerTitleFont      = UIFont.boldSystemFont(ofSize: 22)
         calendar.appearance.headerDateFormat = "yyyy年MM月"
         calendar.appearance.headerMinimumDissolvedAlpha = 0
-        calendar.appearance.weekdayFont          = UIFont.systemFont(ofSize: 17)
-        calendar.appearance.titleFont            = UIFont.systemFont(ofSize: 17)
+        calendar.appearance.weekdayFont          = UIFont.systemFont(ofSize: 16)
+        calendar.appearance.titleFont            = UIFont.systemFont(ofSize: 16)
         label = UILabel(frame: CGRect(x: 25, y: 285, width: 320, height: 300))
         view.addSubview(label)
         
@@ -54,4 +58,15 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
         label.text = df.string(from: date)
         label.font = UIFont.systemFont(ofSize: 23.0)
     }
+    
+
+}
+
+extension ViewController: UITableViewDelegate {
+  
+// セルがタップされた時の処理
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    performSegue(withIdentifier: "toArticleViewController", sender: nil)
+  }
+
 }

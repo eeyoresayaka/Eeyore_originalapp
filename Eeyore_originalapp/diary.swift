@@ -11,4 +11,6 @@ import RealmSwift
 class Diary: Object {
     @objc dynamic var title: String = ""
     @objc dynamic var article: String = ""
+    @objc dynamic var date: String = ""
+    @objc dynamic var image: Data?
 }

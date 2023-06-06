@@ -12,7 +12,6 @@ import RealmSwift
 
 class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource, UITableViewDelegate , UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        print("here")
         let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier:  "cell", for: indexPath)
         cell.textLabel!.text = array[indexPath.row]
         return cell

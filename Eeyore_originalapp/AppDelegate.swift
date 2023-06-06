@@ -20,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             migrationBlock: nil,
             deleteRealmIfMigrationNeeded: true)
         Realm.Configuration.defaultConfiguration = config
+        print(config)
         
         return true
     }

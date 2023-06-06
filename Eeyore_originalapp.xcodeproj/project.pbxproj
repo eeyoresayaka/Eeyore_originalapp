@@ -21,6 +21,7 @@
 		D20A9D282A2C264F0008195B /* CalendarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20A9D262A2C264E0008195B /* CalendarTableViewCell.swift */; };
 		D20A9D292A2C264F0008195B /* CalendarTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D20A9D272A2C264F0008195B /* CalendarTableViewCell.xib */; };
 		D20A9D2B2A2C7FBC0008195B /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20A9D2A2A2C7FBC0008195B /* ArticleViewController.swift */; };
+		D2594FE12A2F3E8F0023630F /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = D2594FE02A2F3E8F0023630F /* icon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		D20A9D262A2C264E0008195B /* CalendarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarTableViewCell.swift; sourceTree = "<group>"; };
 		D20A9D272A2C264F0008195B /* CalendarTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarTableViewCell.xib; sourceTree = "<group>"; };
 		D20A9D2A2A2C7FBC0008195B /* ArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
+		D2594FE02A2F3E8F0023630F /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 		D20A9D012A19F2C30008195B /* Eeyore_originalapp */ = {
 			isa = PBXGroup;
 			children = (
+				D2594FE02A2F3E8F0023630F /* icon.png */,
 				D20A9D022A19F2C30008195B /* AppDelegate.swift */,
 				D20A9D042A19F2C30008195B /* SceneDelegate.swift */,
 				D20A9D062A19F2C30008195B /* ViewController.swift */,
@@ -156,6 +159,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D20A9D0F2A19F2C50008195B /* LaunchScreen.storyboard in Resources */,
+				D2594FE12A2F3E8F0023630F /* icon.png in Resources */,
 				D20A9D0C2A19F2C50008195B /* Assets.xcassets in Resources */,
 				D20A9D0A2A19F2C30008195B /* Main.storyboard in Resources */,
 				D20A9D292A2C264F0008195B /* CalendarTableViewCell.xib in Resources */,
@@ -322,6 +326,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6VUF83RWAX;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Eeyore_originalapp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -349,6 +354,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6VUF83RWAX;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Eeyore_originalapp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

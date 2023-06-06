@@ -11,8 +11,15 @@ import FSCalendar
 import RealmSwift
 
 class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource, UITableViewDelegate , UITableViewDataSource {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        print("here")
+        let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier:  "cell", for: indexPath)
+        cell.textLabel!.text = array[indexPath.row]
+        return cell
+    }
+    
         
-    @IBOutlet weak var tableView: CalendarTableViewCell!
+    @IBOutlet weak var tableView: UITableView!
     var label:UILabel!
     let df = DateFormatter()
     let resultTitle = realm.objects(Diary.self).value(forKey: "title")
@@ -23,19 +30,16 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
         return array.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier:  "cell", for: indexPath)
-        cell.textLabel!.text = array[indexPath.row]
-        return cell
-    }
+   
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
+        tableView.dataSource = self
 
         
-        let calendar = FSCalendar(frame: CGRect(x: 25, y: 110, width: 350, height: 300))
+        let calendar = FSCalendar(frame: CGRect(x: 23, y: 100, width: 350, height: 300))
         calendar.dataSource = self
         calendar.delegate = self
         view.addSubview(calendar)
@@ -43,12 +47,12 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
         calendar.appearance.weekdayTextColor = .darkGray //曜日表示のテキストカラー
         calendar.appearance.titleWeekendColor = .systemPink
         calendar.appearance.headerTitleColor = UIColor.darkGray
-        calendar.appearance.headerTitleFont      = UIFont.boldSystemFont(ofSize: 22)
+        calendar.appearance.headerTitleFont      = UIFont.systemFont(ofSize: 21)
         calendar.appearance.headerDateFormat = "yyyy年MM月"
         calendar.appearance.headerMinimumDissolvedAlpha = 0
         calendar.appearance.weekdayFont          = UIFont.systemFont(ofSize: 16)
         calendar.appearance.titleFont            = UIFont.systemFont(ofSize: 16)
-        label = UILabel(frame: CGRect(x: 25, y: 285, width: 320, height: 300))
+        label = UILabel(frame: CGRect(x: 25, y: 285, width: 320, height: 290))
         view.addSubview(label)
         
     }
@@ -56,17 +60,12 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         df.dateFormat = "yyyy年MM月dd日"
         label.text = df.string(from: date)
-        label.font = UIFont.systemFont(ofSize: 23.0)
+        label.font = UIFont.systemFont(ofSize: 21.0)
     }
     
-
-}
-
-extension ViewController: UITableViewDelegate {
-  
-// セルがタップされた時の処理
-  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    performSegue(withIdentifier: "toArticleViewController", sender: nil)
-  }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+      performSegue(withIdentifier: "toArticleViewController", sender: nil)
+    }
+    
 
 }

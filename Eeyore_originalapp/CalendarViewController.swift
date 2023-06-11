@@ -35,10 +35,14 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
          let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CalendarTableViewCell
          let diary = diaryArray[indexPath.row]
          
+         df.dateFormat = "yyyy年MM月dd日"
+         let selectedDate = df.string(from: date)
+         
          // カレンダーで選択された日付とDiaryのdateが一致する場合に表示
-         if let selectedDate = label.text, selectedDate == diary.date {
+         if selectedDate == diary.date {
              cell.dateLabel.text = diary.date
              cell.titleLabel.text = diary.title
+             
          } else {
              cell.dateLabel.text = ""
              cell.titleLabel.text = ""

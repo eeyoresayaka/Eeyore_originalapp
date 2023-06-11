@@ -16,35 +16,38 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="110"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2023年5月22日" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X1w-Oo-kZn">
-                        <rect key="frame" x="16" y="16" width="153" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="カオサンロード" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7hq-uo-svb">
-                        <rect key="frame" x="16" y="45" width="216" height="46"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="f7i-XQ-YH8">
+                        <rect key="frame" x="194" y="6" width="120" height="98"/>
+                        <constraints>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="iCo-RO-q6e"/>
+                            <constraint firstAttribute="width" constant="120" id="meC-fc-zD6"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="カオサンロード" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7hq-uo-svb">
+                        <rect key="frame" x="6" y="40" width="177.33333333333334" height="30"/>
                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="25"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="IMG_4864" translatesAutoresizingMaskIntoConstraints="NO" id="x45-SG-5Xx">
-                        <rect key="frame" x="214" y="11" width="99" height="89"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    </imageView>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="f7i-XQ-YH8" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="6" id="6VD-v3-xhX"/>
+                    <constraint firstAttribute="bottom" secondItem="f7i-XQ-YH8" secondAttribute="bottom" constant="6" id="A3Y-zn-lrg"/>
+                    <constraint firstItem="7hq-uo-svb" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="6" id="ARv-5w-bvg"/>
+                    <constraint firstItem="7hq-uo-svb" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="BND-eX-u6L"/>
+                    <constraint firstItem="f7i-XQ-YH8" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="6" id="Q7f-nW-lAY"/>
+                    <constraint firstAttribute="bottom" secondItem="f7i-XQ-YH8" secondAttribute="bottom" constant="6" id="ctj-Cd-VO9"/>
+                    <constraint firstAttribute="trailing" secondItem="f7i-XQ-YH8" secondAttribute="trailing" constant="6" id="s1T-6R-ePA"/>
+                    <constraint firstItem="f7i-XQ-YH8" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="6" id="wRr-xU-csY"/>
+                    <constraint firstAttribute="trailing" secondItem="f7i-XQ-YH8" secondAttribute="trailing" constant="6" id="xlr-rp-3Dn"/>
+                </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="dateLabel" destination="X1w-Oo-kZn" id="hye-KH-rgX"/>
+                <outlet property="articleImage" destination="f7i-XQ-YH8" id="Iyc-y2-EcP"/>
                 <outlet property="titleLabel" destination="7hq-uo-svb" id="NKW-SZ-f2g"/>
             </connections>
             <point key="canvasLocation" x="126.71755725190839" y="85.211267605633807"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <image name="IMG_4864" width="3024" height="4032"/>
-    </resources>
 </document>

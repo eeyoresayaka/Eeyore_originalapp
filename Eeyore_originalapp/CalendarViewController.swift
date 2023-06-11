@@ -24,8 +24,10 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
    
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.register(UINib(nibName: "CalendarTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.rowHeight = 110
 
         
         let calendar = FSCalendar(frame: CGRect(x: 23, y: 100, width: 350, height: 300))
@@ -77,14 +79,15 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
             let formattedSelectedDate = df.string(from: selectedDate)
             // カレンダーで選択された日付とDiaryのdateが一致する場合に表示
             if formattedSelectedDate == diary.date {
-//                cell.dateLabel.text = diary.date
                 cell.titleLabel.text = diary.title
+                if let imageData = diary.image {
+                    let image = UIImage(data: imageData)
+                    cell.articleImage.image = image
+                }
             } else {
-                cell.dateLabel.text = ""
                 cell.titleLabel.text = ""
             }
         } else {
-            cell.dateLabel.text = ""
             cell.titleLabel.text = ""
         }
 

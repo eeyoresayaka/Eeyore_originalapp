@@ -77,7 +77,7 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
             let formattedSelectedDate = df.string(from: selectedDate)
             // カレンダーで選択された日付とDiaryのdateが一致する場合に表示
             if formattedSelectedDate == diary.date {
-                cell.dateLabel.text = diary.date
+//                cell.dateLabel.text = diary.date
                 cell.titleLabel.text = diary.title
             } else {
                 cell.dateLabel.text = ""

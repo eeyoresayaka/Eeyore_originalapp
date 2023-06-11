@@ -20,38 +20,7 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
     let realm = try! Realm()
     var diaryArray: [Diary] = []
     var selectedDiary: Diary?
-
-     func fetchDiaries() {
-         let diaries = realm.objects(Diary.self)
-         diaryArray = Array(diaries)
-     }
-
-     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-         fetchDiaries() // データの取得
-         return diaryArray.count
-     }
-
-     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-         fetchDiaries() // データの取得
-         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CalendarTableViewCell
-         let diary = diaryArray[indexPath.row]
-         
-         df.dateFormat = "yyyy年MM月dd日"
-         let selectedDate = df.string(from: date)
-         
-         // カレンダーで選択された日付とDiaryのdateが一致する場合に表示
-         if selectedDate == diary.date {
-             cell.dateLabel.text = diary.date
-             cell.titleLabel.text = diary.title
-             
-         } else {
-             cell.dateLabel.text = ""
-             cell.titleLabel.text = ""
-         }
-         
-         return cell
-     }
-    
+    var selectedDate: Date?
    
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,12 +45,56 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
         view.addSubview(label)
         
     }
-    
+
+     func fetchDiaries() {
+         let diaries = realm.objects(Diary.self)
+         diaryArray = Array(diaries)
+     }
+
+     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+         fetchDiaries() // データの取得
+         return diaryArray.count
+     }
+
+
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
+        selectedDate = date
         df.dateFormat = "yyyy年MM月dd日"
-        label.text = df.string(from: date)
+        let formattedDate = df.string(from: date)
+        label.text = formattedDate
         label.font = UIFont.systemFont(ofSize: 21.0)
+
+        // テーブルビューの再読み込みを行う
+        tableView.reloadData()
     }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        fetchDiaries() // データの取得
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CalendarTableViewCell
+        let diary = diaryArray[indexPath.row]
+
+        if let selectedDate = selectedDate {
+            let formattedSelectedDate = df.string(from: selectedDate)
+            // カレンダーで選択された日付とDiaryのdateが一致する場合に表示
+            if formattedSelectedDate == diary.date {
+                cell.dateLabel.text = diary.date
+                cell.titleLabel.text = diary.title
+            } else {
+                cell.dateLabel.text = ""
+                cell.titleLabel.text = ""
+            }
+        } else {
+            cell.dateLabel.text = ""
+            cell.titleLabel.text = ""
+        }
+
+        return cell
+    }
+
+
+
+    
+
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
       selectedDiary = diaryArray[indexPath.row]

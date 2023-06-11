@@ -21,10 +21,14 @@ class ArticleViewController: UIViewController {
 
         if let diary = diary {
             // diary の情報を使用して表示を更新する処理を行う
-            // 例えば、diary.title や diary.date を使用してラベルに表示するなど
             titlelLabel.text = diary.title
             dateLabel.text = diary.date
             articleLabel.text = diary.article
+            
+            if let imageData = diary.image {
+                let image = UIImage(data: imageData)
+                imageView.image = image
+            }
         }
     }
 

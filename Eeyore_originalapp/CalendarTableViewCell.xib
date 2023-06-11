@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -38,8 +38,8 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="dateLabel" destination="X1w-Oo-kZn" id="M4g-qE-zzG"/>
-                <outlet property="titleLabel" destination="7hq-uo-svb" id="KC2-mp-Ber"/>
+                <outlet property="dateLabel" destination="X1w-Oo-kZn" id="hye-KH-rgX"/>
+                <outlet property="titleLabel" destination="7hq-uo-svb" id="NKW-SZ-f2g"/>
             </connections>
             <point key="canvasLocation" x="126.71755725190839" y="85.211267605633807"/>
         </tableViewCell>

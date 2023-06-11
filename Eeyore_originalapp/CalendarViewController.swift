@@ -11,27 +11,43 @@ import FSCalendar
 import RealmSwift
 
 class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource, UITableViewDelegate , UITableViewDataSource {
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier:  "cell", for: indexPath)
-        cell.textLabel!.text = array[indexPath.row]
-        return cell
-    }
     
         
     @IBOutlet weak var tableView: UITableView!
     var label:UILabel!
     let df = DateFormatter()
-    let resultTitle = realm.objects(Diary.self).value(forKey: "title")
-    let resultArticle = realm.objects(Diary.self).value(forKey: "article")
     
-    var array = ["a", "b", "c"]
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return array.count
-    }
+    let realm = try! Realm()
+    var diaryArray: [Diary] = []
+
+     func fetchDiaries() {
+         let diaries = realm.objects(Diary.self)
+         diaryArray = Array(diaries)
+     }
+
+     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+         fetchDiaries() // データの取得
+         return diaryArray.count
+     }
+
+     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+         fetchDiaries() // データの取得
+         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CalendarTableViewCell
+         let diary = diaryArray[indexPath.row]
+         
+         // カレンダーで選択された日付とDiaryのdateが一致する場合に表示
+         if let selectedDate = label.text, selectedDate == diary.date {
+             cell.dateLabel.text = diary.date
+             cell.titleLabel.text = diary.title
+         } else {
+             cell.dateLabel.text = ""
+             cell.titleLabel.text = ""
+         }
+         
+         return cell
+     }
     
    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self

@@ -242,6 +242,12 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="SkK-ta-FKI"/>
+                    <connections>
+                        <outlet property="articleLabel" destination="66U-eU-kn2" id="Vo4-Ly-EhA"/>
+                        <outlet property="dateLabel" destination="9SB-Sr-B8D" id="EW6-5i-vWj"/>
+                        <outlet property="imageView" destination="n7W-j5-Paz" id="cPu-dL-8rh"/>
+                        <outlet property="titlelLabel" destination="v7b-Fd-hrN" id="fq3-5J-4L7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n5K-Io-9GL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

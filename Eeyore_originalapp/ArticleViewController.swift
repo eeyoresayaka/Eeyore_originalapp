@@ -8,9 +8,25 @@
 import UIKit
 
 class ArticleViewController: UIViewController {
+    
+    @IBOutlet var titlelLabel: UILabel!
+    @IBOutlet var dateLabel: UILabel!
+    @IBOutlet var articleLabel: UILabel!
+    @IBOutlet var imageView: UIImageView!
+    
+    var diary: Diary?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        if let diary = diary {
+            // diary の情報を使用して表示を更新する処理を行う
+            // 例えば、diary.title や diary.date を使用してラベルに表示するなど
+            titlelLabel.text = diary.title
+            dateLabel.text = diary.date
+            articleLabel.text = diary.article
+        }
+    }
 
         // Do any additional setup after loading the view.
     }
@@ -26,4 +42,3 @@ class ArticleViewController: UIViewController {
     }
     */
 
-}

@@ -19,6 +19,7 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
     
     let realm = try! Realm()
     var diaryArray: [Diary] = []
+    var selectedDiary: Diary?
 
      func fetchDiaries() {
          let diaries = realm.objects(Diary.self)
@@ -83,7 +84,16 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+      selectedDiary = diaryArray[indexPath.row]
       performSegue(withIdentifier: "toArticleViewController", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toArticleViewController" {
+            if let articleViewController = segue.destination as? ArticleViewController {
+                articleViewController.diary = selectedDiary
+            }
+        }
     }
     
 

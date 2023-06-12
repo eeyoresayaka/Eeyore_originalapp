@@ -39,7 +39,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="xGF-Qq-FXx">
-                                <rect key="frame" x="16.666666666666657" y="453" width="360" height="340"/>
+                                <rect key="frame" x="16.666666666666657" y="455" width="360" height="340"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="340" id="AkR-KU-kDN"/>
@@ -63,11 +63,17 @@
                         <viewLayoutGuide key="safeArea" id="Mid-JF-ZVw"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="xGF-Qq-FXx" firstAttribute="top" secondItem="Mid-JF-ZVw" secondAttribute="top" constant="352" id="Kly-Jr-qOH"/>
                             <constraint firstItem="xGF-Qq-FXx" firstAttribute="top" secondItem="Mid-JF-ZVw" secondAttribute="top" constant="350" id="LGP-B9-32T"/>
                             <constraint firstItem="9Xa-mZ-t4W" firstAttribute="centerX" secondItem="zwb-7a-2yP" secondAttribute="centerX" id="ZYx-PS-Ejf"/>
                             <constraint firstItem="9Xa-mZ-t4W" firstAttribute="top" secondItem="zwb-7a-2yP" secondAttribute="top" constant="60" id="jFt-ko-vGP"/>
                             <constraint firstItem="xGF-Qq-FXx" firstAttribute="centerX" secondItem="zwb-7a-2yP" secondAttribute="centerX" id="pr8-lC-DrZ"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="LGP-B9-32T"/>
+                            </mask>
+                        </variation>
                     </view>
                     <toolbarItems>
                         <barButtonItem id="ybj-ZL-0uq"/>

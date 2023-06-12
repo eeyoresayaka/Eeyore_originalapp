@@ -83,12 +83,16 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
                 if let imageData = diary.image {
                     let image = UIImage(data: imageData)
                     cell.articleImage.image = image
+                }else {
+                    cell.articleImage.image = nil
                 }
             } else {
                 cell.titleLabel.text = ""
+                cell.articleImage.image = nil
             }
         } else {
             cell.titleLabel.text = ""
+            cell.articleImage.image = nil
         }
 
         return cell

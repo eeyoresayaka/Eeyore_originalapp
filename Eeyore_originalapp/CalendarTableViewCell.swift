@@ -15,6 +15,8 @@ import RealmSwift
 class CalendarTableViewCell: UITableViewCell {
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var articleImage: UIImageView!
+    
+
 
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -23,8 +23,12 @@
                             <constraint firstAttribute="width" constant="120" id="meC-fc-zD6"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="カオサンロード" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7hq-uo-svb">
-                        <rect key="frame" x="6" y="40" width="177.33333333333334" height="30"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="カオサンロード" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7hq-uo-svb">
+                        <rect key="frame" x="9" y="40" width="178" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="178" id="EYB-0J-Vke"/>
+                            <constraint firstAttribute="height" constant="30" id="jDF-wg-aaW"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="25"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -33,8 +37,9 @@
                 <constraints>
                     <constraint firstItem="f7i-XQ-YH8" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="6" id="6VD-v3-xhX"/>
                     <constraint firstAttribute="bottom" secondItem="f7i-XQ-YH8" secondAttribute="bottom" constant="6" id="A3Y-zn-lrg"/>
-                    <constraint firstItem="7hq-uo-svb" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="6" id="ARv-5w-bvg"/>
+                    <constraint firstItem="7hq-uo-svb" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="6" id="ARv-5w-bvg"/>
                     <constraint firstItem="7hq-uo-svb" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="BND-eX-u6L"/>
+                    <constraint firstItem="7hq-uo-svb" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" constant="-62" id="N8G-Jm-bk8"/>
                     <constraint firstItem="f7i-XQ-YH8" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="6" id="Q7f-nW-lAY"/>
                     <constraint firstAttribute="bottom" secondItem="f7i-XQ-YH8" secondAttribute="bottom" constant="6" id="ctj-Cd-VO9"/>
                     <constraint firstAttribute="trailing" secondItem="f7i-XQ-YH8" secondAttribute="trailing" constant="6" id="s1T-6R-ePA"/>

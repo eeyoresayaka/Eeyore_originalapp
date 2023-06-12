@@ -267,7 +267,7 @@
         <!--Article View Controller-->
         <scene sceneID="aCW-Uz-qGc">
             <objects>
-                <viewController id="8By-k5-5kL" customClass="ArticleViewController" sceneMemberID="viewController">
+                <viewController id="8By-k5-5kL" customClass="ArticleViewController" customModule="Eeyore_originalapp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="q2i-gq-tUs">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

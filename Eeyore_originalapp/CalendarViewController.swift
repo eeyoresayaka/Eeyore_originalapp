@@ -98,6 +98,11 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
                 articleViewController.diary = selectedDiary
             }
         }
+        if segue.identifier == "toViewController" {
+            if let ViewController = segue.destination as? ViewController {
+                ViewController.selectedDate = selectedDate
+            }
+        }
     }
     
 

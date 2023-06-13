@@ -19,7 +19,7 @@ class ViewController: UIViewController , UITextFieldDelegate, UINavigationContro
     
     @IBOutlet var datePicker: UIDatePicker!
     
-    
+    var selectedDate: Date!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +39,9 @@ class ViewController: UIViewController , UITextFieldDelegate, UINavigationContro
         datePicker.datePickerMode = UIDatePicker.Mode.date
         datePicker.timeZone = NSTimeZone.local
         datePicker.locale = Locale.current
+        if selectedDate != nil{
+            datePicker.date = selectedDate
+        }
     }
     // 決定ボタン押下
     @IBAction func onTappedCameraButton(){

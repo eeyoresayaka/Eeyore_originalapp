@@ -8,9 +8,9 @@
 import UIKit
 import RealmSwift
 
-let realm = try! Realm()
-
 class ViewController: UIViewController , UITextFieldDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+    
+    let realm = try! Realm()
     
     @IBOutlet var titleTextField: UITextField!
     @IBOutlet var articleTextField: UITextField!
@@ -29,37 +29,18 @@ class ViewController: UIViewController , UITextFieldDelegate, UINavigationContro
         titleTextField.delegate = self
         articleTextField.delegate = self
         
-        let diary: Diary? = read()
+//        let diary: Diary? = read()
         
-        titleTextField.text = diary?.title
-        articleTextField.text = diary?.article
+//        titleTextField.text = diary?.title
+//        articleTextField.text = diary?.article
         
         // Do any additional setup after loading the view.
         // ピッカー設定
         datePicker.datePickerMode = UIDatePicker.Mode.date
         datePicker.timeZone = NSTimeZone.local
         datePicker.locale = Locale.current
-//        textField.inputView = datePicker
-        
-        // 決定バーの生成
-//        let toolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 35))
-//        let spacelItem = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
-//        let doneItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(done))
-//        toolbar.setItems([spacelItem, doneItem], animated: true)
-        
-        // インプットビュー設定
-        
-//        textField.inputAccessoryView = toolbar
-        
     }
-    
-    func read() -> Diary? {
-        return realm.objects(Diary.self).first
-    }
-    
     // 決定ボタン押下
-   
-    
     @IBAction func onTappedCameraButton(){
         presentPickerController(sourceType:  .camera)
     }
@@ -84,40 +65,26 @@ class ViewController: UIViewController , UITextFieldDelegate, UINavigationContro
     }
     
     @IBAction func save(){
+        let diary = Diary()
         let title: String = titleTextField.text!
         let article: String = articleTextField.text!
-        
-        let diary: Diary? = read()
-        
+        let df = DateFormatter()
+        df.dateFormat = "yyyy年MM月dd日"
+        let date = df.string(from: datePicker.date)
         let image = photoImageView.image?.jpegData(compressionQuality: 1)
         
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy年MM月dd日"
-
-        let date = dateFormatter.string(from: datePicker.date)
+        diary.title = title
+        diary.article = article
+        diary.date = date
+        diary.image = image
         
-        if diary != nil {
-            try! realm.write {
-                diary!.title = title
-                diary!.article = article
-                diary!.date = date
-                diary!.image = image
-            }
-        } else {
-            let newDiary = Diary()
-            newDiary.title = title
-            newDiary.article = article
-            newDiary.date = date
-            newDiary.image = image
-            
-            try! realm.write {
-                realm.add(newDiary)
-            }
+        try! realm.write{
+            realm.add(diary)
         }
         
         let alert: UIAlertController = UIAlertController(title: "成功", message: "保存しました", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-        
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {_ in self.dismiss(animated: true)}))
+
         present(alert, animated: true, completion: nil)
 
     }

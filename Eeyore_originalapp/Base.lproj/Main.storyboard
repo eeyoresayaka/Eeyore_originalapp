@@ -207,9 +207,9 @@
                                 </connections>
                             </button>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="epT-gu-TFB">
-                                <rect key="frame" x="49" y="144" width="200" height="35"/>
+                                <rect key="frame" x="66" y="144" width="150" height="35"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="Uy5-oB-u62"/>
+                                    <constraint firstAttribute="width" constant="150" id="Uy5-oB-u62"/>
                                     <constraint firstAttribute="height" constant="35" id="xHn-T2-ZQX"/>
                                 </constraints>
                             </datePicker>
@@ -237,7 +237,7 @@
                             <constraint firstItem="Cgk-sp-Qcu" firstAttribute="top" secondItem="pNM-rr-mhQ" secondAttribute="bottom" constant="5" id="SQ1-wg-BJ1"/>
                             <constraint firstItem="qOc-RD-Tkl" firstAttribute="top" secondItem="Cgk-sp-Qcu" secondAttribute="bottom" constant="18" id="T3n-rb-BKk"/>
                             <constraint firstItem="RqF-2E-Dz4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="WLT-WR-egY"/>
-                            <constraint firstItem="epT-gu-TFB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="33" id="eex-lR-84N"/>
+                            <constraint firstItem="epT-gu-TFB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="50" id="eex-lR-84N"/>
                             <constraint firstItem="epT-gu-TFB" firstAttribute="top" secondItem="Cgk-sp-Qcu" secondAttribute="bottom" constant="10" id="mdE-sC-s59"/>
                             <constraint firstItem="tMN-ep-t7T" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="pEy-Kb-HUr"/>
                             <constraint firstItem="wrB-BS-mjm" firstAttribute="top" secondItem="IZr-WD-0cZ" secondAttribute="bottom" constant="10" id="q16-aT-Fq7"/>
@@ -293,9 +293,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="カオサンロード" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v7b-Fd-hrN">
-                                <rect key="frame" x="25" y="135" width="170" height="27"/>
+                                <rect key="frame" x="25" y="135" width="250" height="27"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="170" id="kIK-Il-Sky"/>
+                                    <constraint firstAttribute="width" constant="250" id="kIK-Il-Sky"/>
                                     <constraint firstAttribute="height" constant="27" id="xgz-Tu-R8o"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
@@ -311,7 +311,7 @@
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IMG_4864" translatesAutoresizingMaskIntoConstraints="NO" id="n7W-j5-Paz">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IMG_4864" translatesAutoresizingMaskIntoConstraints="NO" id="n7W-j5-Paz">
                                 <rect key="frame" x="0.0" y="172" width="393" height="300"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="300" id="AcJ-5m-AUY"/>

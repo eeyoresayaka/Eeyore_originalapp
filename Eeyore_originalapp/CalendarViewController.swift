@@ -48,13 +48,15 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
         
     }
 
-     func fetchDiaries() {
-         let diaries = realm.objects(Diary.self)
-         diaryArray = Array(diaries)
+    func fetchDiaries(date: Date) {
+        let formattedDate = df.string(from: date)
+        let diaries = realm.objects(Diary.self).filter("date == %@", formattedDate)
+        diaryArray = Array(diaries)
      }
 
      func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-         fetchDiaries() // データの取得
+         guard let selectedDate = selectedDate else { return 0 }
+         fetchDiaries(date: selectedDate) // データの取得
          return diaryArray.count
      }
 
@@ -71,37 +73,19 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        fetchDiaries() // データの取得
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CalendarTableViewCell
+        guard let selectedDate = selectedDate else { return cell }
+        fetchDiaries(date: selectedDate) // データの取得
         let diary = diaryArray[indexPath.row]
-
-        if let selectedDate = selectedDate {
-            let formattedSelectedDate = df.string(from: selectedDate)
-            // カレンダーで選択された日付とDiaryのdateが一致する場合に表示
-            if formattedSelectedDate == diary.date {
-                cell.titleLabel.text = diary.title
-                if let imageData = diary.image {
-                    let image = UIImage(data: imageData)
-                    cell.articleImage.image = image
-                }else {
-                    cell.articleImage.image = nil
-                }
-            } else {
-                cell.titleLabel.text = ""
-                cell.articleImage.image = nil
-            }
+        cell.titleLabel.text = diary.title
+        if let imageData = diary.image {
+            let image = UIImage(data: imageData)
+            cell.articleImage.image = image
         } else {
-            cell.titleLabel.text = ""
             cell.articleImage.image = nil
         }
-
         return cell
     }
-
-
-
-    
-
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
       selectedDiary = diaryArray[indexPath.row]

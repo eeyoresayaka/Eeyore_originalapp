@@ -23,5 +23,7 @@
 			</array>
 		</dict>
 	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>写真を撮るために許可が必要です。</string>
 </dict>
 </plist>
